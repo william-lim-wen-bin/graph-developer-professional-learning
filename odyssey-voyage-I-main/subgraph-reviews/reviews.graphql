@@ -37,3 +37,7 @@ type SubmitReviewResponse {
   "Newly created review"
   locationReview: Review
 }
+
+type Location @key(fields: "id", resolvable: false) {
+  id: ID!
+}
