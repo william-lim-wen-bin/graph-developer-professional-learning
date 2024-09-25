@@ -4,6 +4,22 @@ const resolvers = {
       return dataSources.reviewsAPI.getLatestReviews();
     },
   },
+  Location: {
+    __resolveReference: (referencedLocation) => {
+      return referencedLocation;
+    },
+    overallRating: ({ id }, _, { dataSources }) => {
+      return dataSources.reviewsAPI.getOverallRatingForLocation(id);
+    },
+    reviewsForLocation: ({ id }, _, { dataSources }) => {
+      return dataSources.reviewsAPI.getReviewsForLocation(id);
+    },
+  },
+  Review: {
+    location: ({ locationId }) => {
+      return { id: locationId };
+    },
+  },
   Mutation: {
     submitReview: (_, { locationReview }, { dataSources }) => {
       const newReview =
@@ -14,11 +30,6 @@ const resolvers = {
         message: "success",
         locationReview: newReview,
       };
-    },
-  },
-  Review: {
-    location: ({ locationId }) => {
-      return { id: locationId };
     },
   },
 };
