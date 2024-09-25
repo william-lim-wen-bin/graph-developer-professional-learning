@@ -113,6 +113,10 @@ To run the servers in the `final` folder:
    }
    ```
 
+## Getting the router downloaded
+
+https://www.apollographql.com/tutorials/voyage-part1/08-router-configuration-and-uplink
+
 ## Getting Help
 
 For any issues or problems concerning the course content, please refer to the [Odyssey topic in our community forums](https://community.apollographql.com/tags/c/help/6/odyssey).
